@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window>
+  <VBox bkcolor="bk_wnd_darkcolor">
+    <VBox padding="0,10,0,5">
+      <HBox height="25" margin="0,0,0,10">
+        <Label align="right" width="85" text="Type Filter:" margin="0,0,10,0"/>
+        <NativeControl ControlClass="COMBOBOX" height="20" maxwidth="300" style="CBS_DROPDOWN" name="coFileType"/>
+        <Button class="btn_wnd_settings" name="btFileTypes" margin="10,0,0,0"/>
+      </HBox>
+
+      <HBox height="25" margin="0,0,0,10">
+        <Label align="right"  width="85" text="Name Filter:" margin="0,0,10,0"/>
+        <NativeControl ControlClass="COMBOBOX" height="20" maxwidth="260"  style="CBS_DROPDOWN" name="coNameFilter"/>
+      </HBox>
+
+      <HBox height="25" margin="0,0,0,10">
+        <Label align="right"  width="85" text="Folder:" margin="0,0,10,0"/>
+        <NativeControl ControlClass="COMBOBOX" height="20"  style="CBS_DROPDOWN" name="coFolder"/>
+        <Button class="btn_wnd_settings" name="btBrowser" margin="10,0,0,0"/>
+      </HBox>
+      <HBox height="25" margin="0,0,0,10">
+        <Label align="right"  width="85" text="" margin="0,0,10,0"/>
+        <CheckBox class="checkbox_font12" text="Content Search" margin="0,5,0,10" name="chkContentSearch"/>
+      </HBox>
+      <HBox height="25" margin="0,0,0,10">
+        <Label align="right"  width="85" text="Content Filter:" margin="0,0,10,0"/>
+        <NativeControl ControlClass="COMBOBOX" height="20" maxwidth="350"  style="CBS_DROPDOWN|WS_DISABLED" name="coContent"/>
+      </HBox>
+      <HBox height="50" margin="0,0,0,0">
+        <Label align="right" valign="center" width="85" text="选项:" margin="0,0,0,0"/>
+        <VBox padding="5,0,5,0">
+          <HBox height="25" margin="0,0,0,0">
+            <CheckBox class="checkbox_font12" width="90" text="区分大小写" margin="0,0,10,0" name="chkCase"/>
+            <CheckBox class="checkbox_font12" text="跳过.git/.svn" margin="0,0,0,0" selected="true" name="chkSkipGit"/>
+          </HBox>
+          <HBox height="25" margin="0,0,0,0">
+            <CheckBox class="checkbox_font12" width="90" text="单词边界" margin="0,0,10,0"  name="chkWordBold"/>
+            <CheckBox class="checkbox_font12" text="跳过二进制文件" margin="0,0,0,0" selected="true" name="chkSkipBin"/>
+          </HBox>
+        </VBox>
+      </HBox>
+      <HBox height="30" margin="90,0,0,10">
+        <Button class="btn_global_blue_80x30" text="Search" name="btSearch"/>
+        <Control width="auto" height="auto" bkimage="../public/animation/ani_loading.gif" valign="center" visible="false" name="gifLoading"/>
+      </HBox>
+      <NativeControl ControlClass="SysListView32" width="stretch" height="stretch" name="fileListView"/>
+    </VBox>
+  </VBox>
+</Window>

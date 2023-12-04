@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window sizebox="0,0,4,4" padding="10,0,5,0">
+  <VBox bkcolor="bk_wnd_darkcolor">
+    <HBox width="stretch" height="30" bkcolor="bk_main_wnd_search">
+      <Control />
+      <Button name="closebtn"  margin="0,2,0,3" visible="true" width="29" height="25" pushedimage="file='close.png' source='58,0,87,25'" hotimage="file='close.png' source='29,0,58,25'" normalimage="file='close.png' source='0,0,29,25'" />
+    </HBox>
+    
+    <VBox padding="0,10,0,5">
+      <HBox height="25" margin="0,0,0,10">
+        <Label text="Type Filter:" margin="5,2,5,0"/>
+        <NativeControl ControlClass="COMBOBOX" height="25" style="CBS_DROPDOWN" name="coFileType"/>
+        <Button class="btn_wnd_settings" name="btFileTypes" margin="3,2,3,0"/>
+      </HBox>
+      <HBox height="50" margin="0,0,0,0" align="left">
+        <Label valign="center" text="选项:" margin="5,0,0,10"/>
+        <VBox padding="5,0,5,0" width="250">
+          <HBox height="25" margin="10,0,0,0">
+            <CheckBox class="checkbox_font12" width="90" text="区分大小写" margin="0,0,10,0" name="chkCase" />
+            <CheckBox class="checkbox_font12" width="130" text="跳过.git/.svn" margin="0,0,0,0" selected="true" name="chkSkipGit"/>
+          </HBox>
+          <HBox height="25" margin="10,0,0,0">
+            <CheckBox class="checkbox_font12" width="90" text="单词边界" margin="0,0,10,0"  name="chkWordBold"/>
+            <CheckBox class="checkbox_font12" width="130" text="跳过二进制文件" margin="0,0,0,0" selected="true" name="chkSkipBin"/>
+          </HBox>
+        </VBox>
+        <VBox height="30" margin="0,10,0,0">
+          <Button class="btn_global_blue_80x30" text="OK" name="btSearch"/>
+        </VBox>
+      </HBox>
+    </VBox>
+  </VBox>
+</Window>

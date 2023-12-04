@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window>
+  <VBox bkcolor="bk_wnd_darkcolor" padding="0,0,0,0">
+      <HBox height="25" margin="0,0,0,3">
+        <Label  text="Filter:" margin="0,2,5,0"/>
+        <NativeControl ControlClass="COMBOBOX" height="25"  style="CBS_DROPDOWN" name="coFileType"/>
+        <Button class="btn_wnd_settings" name="btFileTypes"  margin="3,2,0,0"/>
+      </HBox>
+      <FileDirTreeView width="stretch" height="stretch" name="fileDirTree"/>
+  </VBox>
+</Window>

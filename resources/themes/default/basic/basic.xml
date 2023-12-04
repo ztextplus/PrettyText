@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window sizebox="0,0,4,4" size="800,600" caption="0,0,0,35">
+
+  <VBox bkcolor="bk_wnd_darkcolor">
+    <HBox width="stretch" height="35" bkcolor="bk_wnd_lightcolor">
+      <Control />
+      
+      <Button class="btn_wnd_min" name="minbtn" margin="4,6,0,0"/>
+      <Box width="21" margin="4,6,0,0">
+        <Button class="btn_wnd_max" name="maxbtn"/>
+        <Button class="btn_wnd_restore" name="restorebtn" visible="false"/>
+      </Box>
+      <Button class="btn_wnd_close" name="closebtn" margin="4,6,8,0"/>
+    </HBox>
+    <VBox margin="0,0,0,0" valign="center" halign="center" width="auto" height="0">
+        <Button class="btn_global_blue_80x30" text="blue"/>
+      <NativeControl name="sliderBar" ControlClass="COMBOBOX" width="140" height="35"/>
+      </VBox>
+     
+    <HBox height="36" bkcolor="bk_main_wnd_search">
+      <Control name="search_icon" width="auto" height="auto" valign="center" margin="10,0,0,0" alpha="192" bkimage="file='../public/icon/icon_search.png'"/>
+      <RichEdit class="simple prompt" name="search_edit" height="auto" margin="8,0,10,0" valign="center"  normaltextcolor="white" prompttext="STRID_MIANWINDOW_SEARCH_EDIT_PROMPT"/>
+      <Button name="clear_input" visible="true" valign="center" margin="0,0,10,0"
+              normalimage="..\public\button\btn_del_search_normal.png"
+              hotimage="..\public\button\btn_del_search_hover.png"
+              pushedimage="..\public\button\btn_del_search_normal.png"/>
+    </HBox>
+    
+    
+    
+    <Box>
+      <VBox margin="0,0,0,0" valign="center" halign="center" width="auto" height="auto">
+        <Label name="tooltip" text="一个简单窗口，带有标题栏和常规按钮。"/>
+      </VBox>
+    </Box>
+    
+  </VBox>
+</Window>

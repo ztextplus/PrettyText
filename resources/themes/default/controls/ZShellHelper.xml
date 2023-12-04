@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window sizebox="0,0,4,4"  caption="0,0,0,30" >
+  <VBox bkimage="file='mainbg.png' corner='2,2,2,2'" padding="2,0,2,0"  borderround="5,5">
+
+    <HBox name="sysbar" height="32">
+      <HBox name="main_tabbar">
+        <Option name="bodytab1" font="system_14" selected="true" group="main_tabbar" width="150" height="32" text="剪贴板" textpadding="10,0,0,0" normalimage="file='main_wnd_tab_item.png' source='0,0,43,32' corner='20,0,20,0'" hotimage="file='main_wnd_tab_item.png' source='43,0,86,32' corner='20,0,20,0'" selectednormalimage="file='main_wnd_tab_item.png' source='86,0,129,32' corner='20,0,20,0'" selectedimage="file='main_wnd_tab_item.png' source='86,0,129,32' corner='20,0,20,0'"/>
+        <Option name="bodytab2" font="system_14" margin="-20,0,0,0" group="main_tabbar" width="150" height="32" text="记事本" textpadding="10,0,0,0" normalimage="file='main_wnd_tab_item.png' source='0,0,43,32' corner='20,0,20,0'" hotimage="file='main_wnd_tab_item.png' source='43,0,86,32' corner='20,0,20,0'" selectednormalimage="file='main_wnd_tab_item.png' source='86,0,129,32' corner='20,0,20,0'" selectedimage="file='main_wnd_tab_item.png' source='86,0,129,32' corner='20,0,20,0'"/>
+        <Option name="bodytab3" font="system_14" margin="-20,0,0,0" group="main_tabbar" width="150" height="32" text="目录助手" textpadding="10,0,0,0" normalimage="file='main_wnd_tab_item.png' source='0,0,43,32' corner='20,0,20,0'" hotimage="file='main_wnd_tab_item.png' source='43,0,86,32' corner='20,0,20,0'" selectednormalimage="file='main_wnd_tab_item.png' source='86,0,129,32' corner='20,0,20,0'" selectedimage="file='main_wnd_tab_item.png' source='86,0,129,32' corner='20,0,20,0'"/>
+        <Option name="bodytab4" font="system_14" margin="-20,0,0,0" group="main_tabbar" width="150" height="32" text="启动助手" textpadding="10,0,0,0" normalimage="file='main_wnd_tab_item.png' source='0,0,43,32' corner='20,0,20,0'" hotimage="file='main_wnd_tab_item.png' source='43,0,86,32' corner='20,0,20,0'" selectednormalimage="file='main_wnd_tab_item.png' source='86,0,129,32' corner='20,0,20,0'" selectedimage="file='main_wnd_tab_item.png' source='86,0,129,32' corner='20,0,20,0'"/>
+      </HBox>
+
+      <HBox name="sysbtn" width="87">
+        <Button name="minbtn"  visible="true" width="29" height="25" pushedimage="file='minmize.png' source='58,0,87,25'" hotimage="file='minmize.png' source='29,0,58,25'" normalimage="file='minmize.png' source='0,0,29,25'" />
+        <Button name="maxbtn"  visible="true" width="29" height="25" pushedimage="file='maxmize.png' source='58,0,87,25'" hotimage="file='maxmize.png' source='29,0,58,25'" normalimage="file='maxmize.png' source='0,0,29,25'" />
+        <Button name="restorebtn"  visible="false" width="29" height="25" pushedimage="file='restore.png' source='58,0,87,25'" hotimage="file='restore.png' source='29,0,58,25'" normalimage="file='restore.png' source='0,0,29,25'" />
+        <Button name="closebtn"  visible="true" width="29" height="25" pushedimage="file='close.png' source='58,0,87,25'" hotimage="file='close.png' source='29,0,58,25'" normalimage="file='close.png' source='0,0,29,25'" />
+      </HBox>
+    </HBox>
+   
+    <HBox name="toolbar_main"   height="35" bkimage="file='toolbar.bkg.png'" visible="true">
+      <Label name="toolbar_main_title" width="420" margin="10,8,0,0" font="system_16"/>
+      <RichEdit name="search" class="simple prompt input" maxwidth="200" width="stretch" height="28" valign="center" padding="5,5,5,5" borderround="2,2" prompttext="请输入搜索内容"/>
+      <Button margin="100,2,0,2"  name="create_new_item" class="btn_global_blue_80x30" text="Create" font="system_14" />
+    </HBox>
+    
+    <TabBox name="body_tablayout">
+      <HBox name="body_main" visible="true">
+        <ClipWindow></ClipWindow>
+      </HBox>
+
+      <HBox>
+        <HBox width="350" sepwidth="6" sepimm="true">
+          <VBox>
+            <HBox bkcolor="white" height="40">
+            	<RichEdit margin="2,6,3,6" class="simple input" name="note_filter" text="" height="28" padding="6,6,6" promptmode="true" prompttext="Filter" promptcolor="lightcolor"/>   
+            </HBox>
+            <NoteFolderTreeView  name="NoteFolderTreeView"/>
+          </VBox>
+          <NativeControl name="sliderBar" ControlClass="SLIDER" width="4"/>
+        </HBox>
+        <HBox>
+          <VBox bkcolor="white">
+            <HBox height="38" name="NoteEdit1">
+            	<RichEdit margin="5,5,50,5" maxwidth = "500" class="simple input" name="note_title" text="" height="28" padding="6,6,6" promptmode="true" prompttext="Title" promptcolor="lightcolor"/>            	
+            </HBox>
+            
+            <HBox height="43" name="NoteEdit2">
+            	<RichEdit margin="5,5,50,12" maxwidth = "500" class="simple input" name="note_category" text="" height="28"  padding="6,6,6" promptmode="true" prompttext="Category" promptcolor="lightcolor"/>
+            </HBox>
+            <NoteDetailWindow name="NoteDetailWindow"></NoteDetailWindow>
+            
+            <HBox height="35" name="NoteEdit3">
+                <Button margin="15,5,0,10"  name="NoteSave" class="btn_global_blue_80x30" text="Save"/>
+            </HBox>
+          </VBox>
+        </HBox>
+      </HBox>
+
+      <HBox>
+        <ZwClipHelpWinWrapper name="ZwClipHelpWinWrapper"></ZwClipHelpWinWrapper>
+      </HBox>
+      
+      <HBox>
+        <HBox width="350" sepwidth="6" sepimm="true">
+          <VBox>
+            <HBox bkcolor="white" height="40">
+              <RichEdit margin="2,6,3,6" class="simple input" name="lanucher_filter" text="" height="28" padding="6,6,6" promptmode="true" prompttext="Filter" promptcolor="lightcolor"/>
+            </HBox>
+            <NoteListWindow />
+          </VBox>
+          <NativeControl name="lancher_list" ControlClass="SLIDER" width="4"/>
+        </HBox>
+        <HBox>
+          <ZwLanucherOutputView></ZwLanucherOutputView>
+        </HBox>
+      </HBox>
+    </TabBox>
+    <HBox height="21" bkimage="file='toolbar.bkg.png' corner='2,0,2,0'"></HBox>
+  </VBox>
+</Window>
